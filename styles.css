@@ -179,6 +179,10 @@ a.label:hover { color: var(--fg); }
 .set-block > .label { display: block; margin-bottom: 14px; }
 .set-title { margin: 0 0 16px; font-size: 18px; font-weight: 400; }
 
+.client { display: inline-flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.client img { width: 72px; height: 72px; padding: 6px; background: var(--tile); }
+.client .set-title { margin: 0; }
+
 .set { display: flex; gap: var(--gap); align-items: flex-start; }
 .set > a { flex: var(--r, 1) 1 0%; min-width: 0; max-width: calc(620px * var(--r, 1)); cursor: zoom-in; }
 .set img { width: 100%; height: auto; }
