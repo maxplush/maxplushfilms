@@ -1,0 +1,251 @@
+:root {
+  --bg: #fff;
+  --fg: #111;
+  --muted: #7a7a7a;
+  --line: #ebebeb;
+  --tile: #111;
+  --gap: 8px;
+  --pad: 32px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 15px/1.6 'Work Sans', system-ui, sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--muted); }
+p a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line); }
+
+img, video { display: block; max-width: 100%; }
+
+h1, h2, p { margin: 0; }
+
+.wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* Header */
+
+.site-header {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 28px var(--pad);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.logo { font-weight: 500; letter-spacing: 0.01em; }
+
+.site-nav { display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 13px; }
+.site-nav a { color: var(--muted); }
+.site-nav a:hover,
+.site-nav a[aria-current="page"] { color: var(--fg); }
+
+/* Page intros */
+
+.intro {
+  padding: 56px 0 40px;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.intro h1 { font-size: 28px; font-weight: 400; line-height: 1.25; }
+.intro p { color: var(--muted); }
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+section + section { margin-top: 72px; }
+section > .label { display: block; margin-bottom: 16px; }
+
+/* Home */
+
+.hero img {
+  width: 100%;
+  height: min(78vh, 860px);
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.bio {
+  padding: 48px 0 32px;
+  max-width: 620px;
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.index { list-style: none; margin: 0 0 24px; padding: 0; border-top: 1px solid var(--line); }
+.index li { border-bottom: 1px solid var(--line); }
+.index a {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 18px 0;
+}
+.index .num { font-size: 12px; color: var(--muted); }
+.index .name { font-size: 18px; }
+.index .meta { font-size: 13px; color: var(--muted); text-align: right; }
+
+/* Galleries */
+
+.gallery { columns: 3 300px; column-gap: var(--gap); }
+.gallery > * { display: block; margin-bottom: var(--gap); break-inside: avoid; }
+.gallery img { width: 100%; height: auto; }
+.gallery a { cursor: zoom-in; }
+.gallery a:hover img { opacity: 0.92; }
+
+.empty-note {
+  padding: 96px 24px;
+  border: 1px solid var(--line);
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Films */
+
+.films { display: flex; flex-direction: column; gap: 56px; }
+.films figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.films video { width: 100%; background: var(--tile); }
+.films figcaption { font-size: 13px; color: var(--muted); }
+
+/* Thirty Days */
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.day {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--tile);
+  color: #fff;
+  overflow: hidden;
+}
+
+.day img,
+.day video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.day .tag {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.day.filled { cursor: pointer; }
+.day.filled .tag { text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6); }
+.day.filled:hover img,
+.day.filled:hover video { opacity: 0.85; }
+.day.empty .tag { color: #6e6e6e; }
+
+/* About */
+
+.about {
+  padding-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.about img { grid-column: span 5; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.about-text { grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 18px; max-width: 560px; }
+.about-text .lead { font-size: 22px; line-height: 1.45; }
+.about-text h2 { margin-top: 20px; }
+
+/* Footer */
+
+.site-footer {
+  max-width: 1440px;
+  margin: 96px auto 0;
+  padding: 28px var(--pad) 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.site-footer a:hover { color: var(--fg); }
+.site-footer .copy { margin-left: auto; }
+
+/* Lightbox */
+
+.lightbox {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(255, 255, 255, 0.98);
+}
+.lightbox::backdrop { background: transparent; }
+.lb-stage { width: 100%; height: 100%; display: grid; place-items: center; padding: 56px; }
+.lb-stage img,
+.lb-stage video { max-width: 100%; max-height: calc(100dvh - 112px); object-fit: contain; }
+.lightbox button {
+  position: absolute;
+  background: none;
+  border: 0;
+  padding: 16px 20px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--fg);
+  cursor: pointer;
+}
+.lightbox button:hover { color: var(--muted); }
+.lb-close { top: 0; right: 0; }
+.lb-prev { left: 0; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 0; top: 50%; transform: translateY(-50%); }
+.lightbox.single .lb-prev,
+.lightbox.single .lb-next { display: none; }
+
+/* Small screens */
+
+@media (max-width: 760px) {
+  :root { --pad: 16px; }
+  .site-header { flex-direction: column; gap: 12px; padding-top: 20px; padding-bottom: 20px; }
+  .site-nav { gap: 8px 20px; }
+  .intro { padding: 32px 0 28px; }
+  .intro h1 { font-size: 24px; }
+  .hero img { height: 62vh; }
+  .bio { font-size: 19px; padding-top: 32px; }
+  .index a { grid-template-columns: 32px 1fr; }
+  .index .meta { grid-column: 2; text-align: left; margin-top: -12px; }
+  .calendar { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .day .tag { flex-direction: column; gap: 0; font-size: 11px; line-height: 1.4; white-space: nowrap; }
+  .about { display: flex; flex-direction: column; gap: 32px; padding-top: 32px; }
+  .site-footer .copy { margin-left: 0; width: 100%; }
+  .lb-stage { padding: 48px 8px; }
+}
