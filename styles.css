@@ -180,7 +180,7 @@ a.label:hover { color: var(--fg); }
 .set-title { margin: 0 0 16px; font-size: 18px; font-weight: 400; }
 
 .client { display: inline-flex; align-items: center; gap: 16px; margin-bottom: 20px; }
-.client img { width: 72px; height: 72px; padding: 6px; background: var(--tile); }
+.client img { width: 72px; height: 72px; padding: 6px; background: #fff; }
 .client .set-title { margin: 0; }
 
 .set { display: flex; gap: var(--gap); align-items: flex-start; }
