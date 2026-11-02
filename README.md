@@ -24,7 +24,17 @@ Put the clip and a still in `videos/interviews/` or `videos/ads/`, then add a ti
 </a>
 ```
 
-Tiles are vertical (9:16). Remove the "Coming soon" paragraph once the page has a video.
+Tiles are vertical (9:16) and show above the photo sets.
+
+## Photos
+
+Full-resolution originals live in `social/` (not committed). Web copies go in `images/social/`, 2000px on the long edge:
+
+```sh
+sips -Z 2000 -s format jpeg -s formatOptions 78 "social/Group/photo.jpg" --out images/social/group-1.jpg
+```
+
+Each group is a `.set` row on its page. Give each photo `style="--r: <width / height>"` (0.75 for portrait, 1.333 for landscape) so the row lines up at one height, and `class="wide"` on landscape photos so they go full width on phones.
 
 ## Adding a Thirty Days video
 

@@ -100,7 +100,7 @@ a.label:hover { color: var(--fg); }
 .home .cta:hover { border-color: var(--muted); }
 
 .home-image { margin-top: 10vh; }
-.home-image img { width: 100%; height: min(70vh, 760px); object-fit: cover; object-position: center 62%; }
+.home-image img { width: 100%; height: min(70vh, 760px); object-fit: cover; object-position: center 60%; }
 
 /* Social: category cards */
 
@@ -171,6 +171,18 @@ a.label:hover { color: var(--fg); }
 .day.filled:hover video { opacity: 0.85; }
 .day.empty .tag { color: #6e6e6e; }
 
+/* Photo sets: one row per group. Each photo's flex-grow is its aspect ratio
+   (--r = width / height), so every photo in a row ends up the same height. */
+
+.set-block + .set-block,
+.clips:not(:empty) + .set-block { margin-top: 56px; }
+.set-block > .label { display: block; margin-bottom: 14px; }
+
+.set { display: flex; gap: var(--gap); align-items: flex-start; }
+.set > a { flex: var(--r, 1) 1 0%; min-width: 0; max-width: calc(620px * var(--r, 1)); cursor: zoom-in; }
+.set img { width: 100%; height: auto; }
+.set > a:hover img { opacity: 0.9; }
+
 .calendar {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -237,6 +249,9 @@ a.label:hover { color: var(--fg); }
   .cards { grid-template-columns: 1fr; gap: 32px; }
   .clips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .clips.landscape { grid-template-columns: 1fr; }
+  .set { flex-wrap: wrap; }
+  .set > a { flex: 1 1 calc(50% - var(--gap)); max-width: none; }
+  .set > a.wide { flex-basis: 100%; }
   .calendar { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .day .tag { flex-direction: column; gap: 0; font-size: 11px; line-height: 1.4; white-space: nowrap; }
   .site-footer .copy { margin-left: 0; width: 100%; }
