@@ -188,6 +188,18 @@ a.label:hover { color: var(--fg); }
 .set > a { flex: var(--r, 1) 1 0%; min-width: 0; max-width: calc(620px * var(--r, 1)); cursor: zoom-in; }
 .set img { width: 100%; height: auto; }
 .set > a:hover img { opacity: 0.9; }
+.set > a.play { position: relative; cursor: pointer; }
+.set > a.play::after {
+  content: '▶ Play';
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+.set-note { margin-top: 12px; font-size: 13px; color: var(--muted); }
 
 .calendar {
   display: grid;
