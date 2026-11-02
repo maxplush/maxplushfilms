@@ -202,6 +202,19 @@ a.label:hover { color: var(--fg); }
 }
 .set-note { margin-top: 12px; font-size: 13px; color: var(--muted); }
 
+/* Hover previews (preview.js): fade the muted clip in once it's playing. */
+video.preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+.previewing > video.preview.ready { opacity: 1; }
+
 .calendar {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
