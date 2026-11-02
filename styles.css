@@ -134,6 +134,7 @@ a.label:hover { color: var(--fg); }
   overflow: hidden;
 }
 .clips.landscape .clip { aspect-ratio: 16 / 9; }
+.clip img.contain { object-fit: contain; }
 .day { aspect-ratio: 4 / 5; }
 
 .clip img,
