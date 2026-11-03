@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
 
@@ -17,6 +18,7 @@
 <nav class="site-nav">
 <a href="social.html" aria-current="page">Social</a>
 <a href="mailto:maxabeplush@gmail.com">Contact</a>
+<button class="theme-toggle" type="button">Dark</button>
 </nav>
 </header>
 
@@ -65,7 +67,7 @@
 
 <section class="set-block">
 <a class="client" href="https://waxproject.co/" target="_blank" rel="noopener">
-<h2 class="set-title"><img class="wordmark" src="images/clients/wax-project.png" alt="Wax Project"> ↗</h2>
+<h2 class="set-title"><img class="wordmark only-light" src="images/clients/wax-project.png" alt="Wax Project"><img class="wordmark only-dark" src="images/clients/wax-project-dark.png" alt="Wax Project"> ↗</h2>
 </a>
 <div class="set" data-gallery>
 <a class="wide play" href="videos/ads/wax-project.mp4" data-lightbox data-video="videos/ads/wax-project.mp4" data-poster="videos/ads/wax-project-poster.jpg" style="--r: 1.333"><img loading="lazy" src="videos/ads/wax-project-poster.jpg" alt="Wax Project surf wax resting on driftwood beside a surfboard"></a>
@@ -104,5 +106,6 @@
 
 <script src="lightbox.js"></script>
 <script src="preview.js"></script>
+<script src="theme.js"></script>
 </body>
 </html>

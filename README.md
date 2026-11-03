@@ -11,7 +11,7 @@ Plain static site, no build step. Hosted on Cloudflare Pages from this repo (bui
 - `interviews.html`, `ad-work.html`, `personal.html` — video grids
 - `thirty-days.html` — the 30-day video challenge calendar, linked from Personal
 
-Shared styles are in `styles.css`. `lightbox.js` plays any `<a data-lightbox data-video="...">` full screen.
+Shared styles are in `styles.css`. `lightbox.js` plays any `<a data-lightbox data-video="...">` full screen, `preview.js` plays a muted preview on hover, and `theme.js` runs the light/dark toggle (colors are the variables at the top of `styles.css`).
 
 ## Adding a video to Interviews or Ad Work
 
