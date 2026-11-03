@@ -211,6 +211,7 @@ a.label:hover { color: var(--fg); }
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 .set-note { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.set-lede { max-width: 560px; margin: -8px 0 16px; color: var(--muted); }
 
 /* Hover previews (preview.js): fade the muted clip in once it's playing. */
 video.preview {
