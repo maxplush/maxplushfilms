@@ -170,6 +170,15 @@ a.label:hover { color: var(--fg); }
 .day.filled:hover img,
 .day.filled:hover video { opacity: 0.85; }
 .day.empty .tag { color: #6e6e6e; }
+.day.filled::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 40%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+  pointer-events: none;
+}
+.day.filled .tag { z-index: 1; }
 
 /* Photo sets: one row per group. Each photo's flex-grow is its aspect ratio
    (--r = width / height), so every photo in a row ends up the same height. */

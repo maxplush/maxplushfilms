@@ -7,7 +7,14 @@
 //           (without one, the tile shows the video's first frame)
 //   title   optional short caption
 const DAYS = [
-  // { day: 1, video: 'videos/30/day-01.mp4', poster: 'videos/30/day-01.jpg', title: 'First light' },
+  { day: 1, video: 'videos/30/day-01.mp4', poster: 'videos/30/day-01.jpg' },
+  { day: 2, video: 'videos/30/day-02.mp4', poster: 'videos/30/day-02.jpg' },
+  { day: 3, video: 'videos/30/day-03.mp4', poster: 'videos/30/day-03.jpg' },
+  { day: 4, video: 'videos/30/day-04.mp4', poster: 'videos/30/day-04.jpg' },
+  { day: 5, video: 'videos/30/day-05.mp4', poster: 'videos/30/day-05.jpg' },
+  { day: 6, video: 'videos/30/day-06.mp4', poster: 'videos/30/day-06.jpg' },
+  { day: 7, video: 'videos/30/day-07.mp4', poster: 'videos/30/day-07.jpg' },
+  { day: 8, video: 'videos/30/day-08.mp4', poster: 'videos/30/day-08.jpg' },
 ];
 
 (() => {
