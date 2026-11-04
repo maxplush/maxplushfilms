@@ -10,6 +10,8 @@ Plain static site, no build step. Hosted on Cloudflare Pages from this repo (bui
 - `social.html` — three cards linking to the categories below
 - `interviews.html`, `ad-work.html`, `personal.html` — video grids
 - `thirty-days.html` — the 30-day video challenge calendar, linked from Personal
+- `about.html` — bio and profile photo
+- `contact.html` — "Let’s Create", email, LinkedIn and Instagram
 
 Shared styles are in `styles.css`. `lightbox.js` plays any `<a data-lightbox data-video="...">` full screen, `preview.js` plays a muted preview on hover, and `theme.js` runs the light/dark toggle (colors are the variables at the top of `styles.css`).
 

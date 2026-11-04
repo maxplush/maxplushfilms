@@ -90,7 +90,7 @@ h1, p { margin: 0; }
 
 .logo { font-weight: 500; letter-spacing: 0.01em; }
 
-.site-nav { display: flex; gap: 28px; font-size: 13px; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 28px; font-size: 13px; }
 .site-nav a { color: var(--muted); }
 .site-nav a:hover,
 .site-nav a[aria-current="page"] { color: var(--fg); }
@@ -144,6 +144,35 @@ a.label:hover { color: var(--fg); }
 
 .home-image { margin-top: 10vh; }
 .home-image img { width: 100%; height: min(70vh, 760px); object-fit: cover; object-position: center 60%; }
+
+/* About */
+
+.about {
+  padding-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.about > img { grid-column: span 5; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.about-text { grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 18px; max-width: 560px; }
+.about-text h1 { margin: 0; }
+.about-text .lead { font-size: 26px; line-height: 1.35; }
+
+/* Contact */
+
+.contact { padding: 10vh 0 24px; }
+.contact h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 400; line-height: 1.05; margin-bottom: 48px; }
+.contact-links { list-style: none; margin: 0; padding: 0; max-width: 720px; border-top: 1px solid var(--line); }
+.contact-links li { border-bottom: 1px solid var(--line); }
+.contact-links a {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 20px 0;
+  font-size: 18px;
+}
 
 /* Social: category cards */
 
@@ -328,12 +357,15 @@ video.preview {
 
 @media (max-width: 760px) {
   :root { --pad: 16px; }
-  .site-header { padding-top: 20px; padding-bottom: 20px; }
+  .site-header { padding-top: 20px; padding-bottom: 20px; flex-direction: column; gap: 10px; }
+  .site-nav { justify-content: flex-start; gap: 8px 20px; }
   .intro { padding: 32px 0 28px; }
   .intro h1 { font-size: 24px; }
   .home { padding-top: 6vh; }
   .home-image img { height: 56vh; }
   .cards { grid-template-columns: 1fr; gap: 32px; }
+  .about { display: flex; flex-direction: column; gap: 32px; padding-top: 32px; }
+  .contact-links a { grid-template-columns: 1fr; gap: 4px; font-size: 16px; }
   .clips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .clips.landscape { grid-template-columns: 1fr; }
   .set { flex-wrap: wrap; }
