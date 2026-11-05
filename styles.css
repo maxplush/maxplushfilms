@@ -268,8 +268,9 @@ a.label:hover { color: var(--fg); }
 
 /* Two client sections side by side. Subgrid lines up their title, optional
    description and video rows so both videos start at the same height. */
+.set-block + .pair,
+.pair + .set-block { margin-top: 56px; }
 .pair {
-  margin-top: 56px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 24px;
