@@ -1,25 +1,13 @@
 .DS_Store
-# Full-resolution originals; web-sized copies live in images/
+
+# Full-resolution originals; web-sized copies live in images/ and videos/
 /social/
-/P1050512.JPG
-/Dreamsea-Surf-Camp-Costa-Rica-Logo-1024x768.png
-/mainpagephoto.jpg
-/videos/hermitcrab.MOV
-/videos/hermitcrab.jpg
 /interviews/
-/ducoffeeclimb.MOV
-/ducoffeeclimb.jpg
-/dulogo.png
-/dreamseavideo.MOV
-/juliendenis.MOV
-/videos/birthday.MOV
-/videos/View recent photos 2.png
-/personalphoto.jpg
-/personalphotofinal.jpeg
-/max_profile.JPG
-/finalmaxprofile.JPG
-/videos/nico_recropped.mov
-/videos/rienk_marrissa_recropped.mov
-/du-cropped.mov
+*.mov
+*.MOV
+*.heic
+*.HEIC
+
 # Videos are served from Cloudflare R2 (media.maxplushfilms.com); local copies are for uploading
 /videos/**/*.mp4
+/r2-upload/
