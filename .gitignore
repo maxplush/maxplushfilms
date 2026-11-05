@@ -21,3 +21,5 @@
 /videos/nico_recropped.mov
 /videos/rienk_marrissa_recropped.mov
 /du-cropped.mov
+# Videos are served from Cloudflare R2 (media.maxplushfilms.com); local copies are for uploading
+/videos/**/*.mp4

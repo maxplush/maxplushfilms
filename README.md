@@ -15,12 +15,22 @@ Plain static site, no build step. Hosted on Cloudflare Pages from this repo (bui
 
 Shared styles are in `styles.css`. `lightbox.js` plays any `<a data-lightbox data-video="...">` full screen, `preview.js` plays a muted preview on hover, and `theme.js` runs the light/dark toggle (colors are the variables at the top of `styles.css`).
 
+## Videos
+
+Video files (`.mp4`) are served from the Cloudflare R2 bucket `maxplushfilms-media` at `https://media.maxplushfilms.com/`, not from this repo: Pages ignored range requests, so videos buffered fully before playing and couldn't be scrubbed. R2 supports ranges. Posters (`.jpg`) stay in the repo.
+
+To add a video: convert it to H.264 MP4, upload it to the bucket under the same path you'd use locally (e.g. `videos/ads/name.mp4`), and reference it by its full `https://media.maxplushfilms.com/...` URL. Local `.mp4` copies in `videos/` are git-ignored.
+
+```sh
+ffmpeg -i in.mov -vf "scale=1280:-2" -c:v libx264 -preset slow -crf 26 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart out.mp4
+```
+
 ## Adding a video to Interviews or Ad Work
 
-Put the clip and a still in `videos/interviews/` or `videos/ads/`, then add a tile inside the `clips` grid on that page (the pages have a commented example):
+Upload the clip to R2 and put a still in `videos/interviews/` or `videos/ads/`, then add a tile inside the `clips` grid on that page (the pages have a commented example):
 
 ```html
-<a class="clip" href="videos/ads/name.mp4" data-lightbox data-video="videos/ads/name.mp4" data-poster="videos/ads/name.jpg">
+<a class="clip" href="https://media.maxplushfilms.com/videos/ads/name.mp4" data-lightbox data-video="https://media.maxplushfilms.com/videos/ads/name.mp4" data-poster="videos/ads/name.jpg">
 <img loading="lazy" src="videos/ads/name.jpg" alt="Short description">
 <span class="tag"><span>Client</span><span>Title</span></span>
 </a>
@@ -40,10 +50,10 @@ Each group is a `.set` row on its page. Give each photo `style="--r: <width / he
 
 ## Adding a Thirty Days video
 
-Put the clip (and optionally a still) in `videos/30/`, then add a line to `DAYS` at the top of `thirty-days.js`:
+Upload the clip to R2 as `videos/30/day-NN.mp4`, put a still in `videos/30/`, then add a line to `DAYS` at the top of `thirty-days.js`:
 
 ```js
-{ day: 1, video: 'videos/30/day-01.mp4', poster: 'videos/30/day-01.jpg', title: 'First light' },
+{ day: 9, video: 'https://media.maxplushfilms.com/videos/30/day-09.mp4', poster: 'videos/30/day-09.jpg', title: 'First light' },
 ```
 
 Days without an entry show as "Coming soon".
