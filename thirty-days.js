@@ -18,6 +18,7 @@ const DAYS = [
   { day: 9, video: 'https://media.maxplushfilms.com/videos/30/day-09.mp4', poster: 'videos/30/day-09.jpg' },
   { day: 10, video: 'https://media.maxplushfilms.com/videos/soleil.mp4', poster: 'videos/30/day-10.jpg' },
   { day: 11, video: 'https://media.maxplushfilms.com/videos/30/day-11.mp4?v=1', poster: 'videos/30/day-11.jpg' },
+  { day: 12, video: 'https://media.maxplushfilms.com/videos/30/day-12.mp4?v=1', poster: 'videos/30/day-12.jpg' },
 ];
 
 (() => {

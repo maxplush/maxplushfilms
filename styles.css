@@ -373,6 +373,13 @@ video.preview {
 .lightbox.single .lb-prev,
 .lightbox.single .lb-next { display: none; }
 
+/* Flyers: a uniform 4:5 grid so the columns line up */
+
+.flyers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.flyer { display: block; cursor: zoom-in; }
+.flyer img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--tile); transition: opacity 0.2s; }
+.flyer:hover img { opacity: 0.9; }
+
 /* Small screens */
 
 @media (max-width: 760px) {
@@ -388,6 +395,7 @@ video.preview {
   .contact-links a { grid-template-columns: 1fr; gap: 4px; font-size: 16px; }
   .clips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .clips.landscape { grid-template-columns: 1fr; }
+  .flyers { grid-template-columns: 1fr; }
   .pair { grid-template-columns: 1fr; }
   .pair > .set-block { display: block; }
   .pair > .set-block + .set-block { margin-top: 56px; }
